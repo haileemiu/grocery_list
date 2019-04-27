@@ -1,0 +1,16 @@
+{% extends 'grocery_list/base.html' %}
+
+{% block body_block %}
+  <ul>
+    {% for item in grocery_list %}
+
+    <li>
+      {{item.category}}
+      {{ item.item }}
+      {{item.quantity}}
+    </li>
+    {% endfor %}
+
+  </ul>
+{{list}}
+{% endblock %}
