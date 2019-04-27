@@ -19,7 +19,8 @@ class Item(models.Model):
   category =  models.ForeignKey(Category, on_delete=models.DO_NOTHING, blank=True, null=True)
 
   def __str__(self):
-    return f"{self.item} - {self.quantity}"
+    # return f"{self.item} - {self.quantity}"
+    return self.item
 
   def get_absolute_url(self):
     return reverse('grocery_list:list')
