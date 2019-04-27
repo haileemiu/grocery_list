@@ -2,15 +2,15 @@
 
 {% block body_block %}
   <ul>
-    {% for item in grocery_list %}
-
-    <li>
-      {{item.category}}
-      {{ item.item }}
-      {{item.quantity}}
-    </li>
+    {% for category,items in grocery_list %}
+      <li>
+          {{ category }}
+          <ul>
+            {% for item in items %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+      </li>
     {% endfor %}
-
   </ul>
-{{list}}
 {% endblock %}
