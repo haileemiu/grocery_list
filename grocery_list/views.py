@@ -19,8 +19,6 @@ class ItemCreate(CreateView):
 
 class GroceryListView(ListView):
   model = models.Item
-  # context_object_name = 'grocery_list'
-  paginate_by = 100
 
   def get_organized_data(self):
 

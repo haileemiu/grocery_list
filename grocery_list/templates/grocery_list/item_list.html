@@ -1,7 +1,7 @@
 {% extends 'grocery_list/base.html' %}
 
 {% block body_block %}
-{{grocery_list}}
+
   <ul>
     {% for category,items in grocery_list %}
       <li>
@@ -17,4 +17,6 @@
       </li>
     {% endfor %}
   </ul>
+
+  <a href="{% url 'grocery_list:new-item' %}">Add</a>
 {% endblock %}
