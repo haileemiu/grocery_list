@@ -14,7 +14,7 @@ def index(request):
 
 class ItemCreate(CreateView):
   model = models.Item
-  fields = ['item', 'quantity', 'category']  
+  fields = ['item', 'category']  
 
 
 class GroceryListView(ListView):
@@ -31,7 +31,7 @@ class GroceryListView(ListView):
       if item.category.name not in items_by_category:
         items_by_category[item.category.name] = []
 
-      items_by_category[item.category.name].append(item.item)
+      items = items_by_category[item.category.name].append(item.item)
     
     return items_by_category.items()
 
